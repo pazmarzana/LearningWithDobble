@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Dobble</title>
+</head>
+<body>
+    <div class="container">
+        <div class="head">
+            <div class="score">
+                <h3>Player points:  <span id="playerPoints">0</span></h3>
+                <h3>Time:  <span id="time">0</span></h3>
+            </div>
+            <div class="title">
+                <h3>Dobble</h3>
+            </div>
+            <div class="options">
+                <button id="volume">Volume</button>
+                <button id="choseDeck">Chose Deck</button>
+                <button id="customizeDeck">Customize Deck</button>
+            </div>
+        </div>
+        <div class="table">
+            <div class="discardDeck deck">
+                <div style="order: 2" class="deckTitle">Discard deck</div>
+                <div style="order: 1" class="card">
+                    <div class="discardCardWord" data-DCid="0"></div>
+                    <div class="discardCardWord" data-DCid="1"></div>
+                    <div class="discardCardWord" data-DCid="2"></div>
+                    <div class="discardCardWord" data-DCid="3"></div>
+                    <div></div>
+                    <div class="discardCardWord" data-DCid="4"></div>
+                    <div class="discardCardWord" data-DCid="5"></div>
+                    <div class="discardCardWord" data-DCid="6"></div>
+                    <div class="discardCardWord" data-DCid="7"></div>
+                </div>
+            </div>
+            <div class="playerDeck deck">
+                <div style="order: 2" class="deckTitle">Player deck</div>
+                <div style="order: 1" class="card">
+                    <div class="playerCardWord" data-PCid="0"></div>
+                    <div class="playerCardWord" data-PCid="1"></div>
+                    <div class="playerCardWord" data-PCid="2"></div>
+                    <div class="playerCardWord" data-PCid="3"></div>
+                    <div id="match"></div>
+                    <div class="playerCardWord" data-PCid="4"></div>
+                    <div class="playerCardWord" data-PCid="5"></div>
+                    <div class="playerCardWord" data-PCid="6"></div>
+                    <div class="playerCardWord" data-PCid="7"></div>
+                </div>
+            </div>
+        </div>
+
+        <h4>Right click on your card's words to see alternative text</h4>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

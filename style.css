@@ -1,0 +1,217 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: large;
+}
+.container{
+    background-color: rgb(137, 230, 230);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height:100vh;
+    /* border: 1px solid orange; */
+}
+.head{
+    background-color: rgb(229, 245, 245);
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    /* border: 1px solid violet; */
+}
+.score{
+
+}
+.title{
+
+}
+.options{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    /* border: 1px solid red; */
+}
+.options button{
+    padding: 0.5em;
+    margin: 0.5em;
+    width: 100%;
+    font-size: large;
+    font-weight: 600;
+    background-color: teal;
+    color:rgb(229, 245, 245);
+}
+.table {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 70vh;
+    /* border: 1px blue; */
+}
+.deck {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 40%;
+    /* border: 1px solid green; */
+}
+.deckTitle{
+    width: 40%;
+    text-align: center;
+    font-size: large;
+    /* border: 1px red; */
+}
+.card {
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 80%;
+    height: 60vh;
+    padding: 4em;
+    margin: 2em 2em 2em 2em;
+    border-radius: 15%;
+    /* border: 1px yellow; */
+    box-shadow: 15px 15px 53px rgb(0, 80, 80);
+}
+.deck div div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    flex: 30%;
+    width: 140px;
+    height: 140px;
+    margin: 3px;
+    font-size: xx-large;
+    font-family: "Comic Sans MS";
+    border: 1px yellow;
+}
+.deck div div:nth-child(1) {
+    color: blueviolet;
+}
+.deck div div:nth-child(2) {
+    color: green;
+}
+.deck div div:nth-child(3) {
+    color: red;
+}
+.deck div div:nth-child(4) {
+    color: orange;
+}
+.deck div div:nth-child(6) {
+    color: yellowgreen;
+}
+.deck div div:nth-child(7) {
+    color: blue;
+}
+.deck div div:nth-child(8) {
+    color: rgb(255, 0, 106);
+}
+.deck div div:nth-child(9) {
+    color: rgb(0, 179, 255);
+}
+.correct{
+    color: green;
+    font-size: xx-large;
+}
+.incorrect{
+    color: red;
+    font-size: xx-large;
+}
+img{
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    border: 1px blue;
+}
+.smaller{
+    font-size: xx-small;
+}
+.smaller img{
+    width: 50px;
+    height: 50px;
+}
+
+.matched {
+    animation: myRotate 1s ;
+}
+  
+@keyframes myRotate {
+    0% {
+      transform: rotate(0) scale(1.5, 1.5);
+    }
+    100% {
+      transform: rotate(360deg) scale(1, 1);
+    }
+  }
+  
+@media only screen and (max-width: 2300px) {
+    .deckTitle{
+        width: 90%;
+    }
+    .card {
+        width: 90%;
+        padding: 1em;
+        margin: 1em 1em 1em 1em;
+    }
+    .deck div div {
+        width: 30%;
+        height: 30%;
+        margin: 1px;
+        font-size: x-large;
+    }
+    img{
+        width: 100px;
+        height: 100px;
+    }
+  }
+
+  @media only screen and (max-width: 1000px) {
+    img{
+        width: 60px;
+        height: 60px;
+    }
+    .deck div div {
+        margin: 0.5px;
+        font-size: medium;
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    .head{
+        font-size: small;
+    }
+    .options button{
+        font-size: small;
+        padding: 0.2em;
+        margin: 0.2em;
+    }
+    .deck div div {
+        font-size: small;
+    }
+  }
+  @media only screen and (max-width: 500px) {
+    .deck div div {
+        font-size: x-small;
+    }
+    img{
+        width: 30px;
+        height: 30px;
+    }
+  }
+
+
+
