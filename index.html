@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Palette+Mosaic&family=Roboto&display=swap" rel="stylesheet"> -->
     <link href="https://fonts.googleapis.com/css2?family=Palette+Mosaic&family=Righteous&display=swap&family=Roboto&display=swap" rel="stylesheet">
     <title>Match it!</title>
 </head>
@@ -15,7 +14,6 @@
     <div class="container">
         <div class="head">
             <div class="options">
-                <!-- <a href="help.html" class="button">Help</a> -->
                 <button id="helpButton">Help</button>
                 <button id="seeWordsButton">See Words</button>
                 <!-- <button id="choseDeck">Chose Deck</button> -->
@@ -24,49 +22,52 @@
             </div>
             <div class="title">
                 <h3>Match it!</h3>
-                <!-- <h5>A game to have fun and learn languages at the same time</h5> -->
             </div>
             <div>
-                <!-- <h3>Points:  <span id="playerPoints">0</span></h3>
-                <h3>Time:  <span id="time"></span></h3> -->
                 <button id="newGame">Play</button>
             </div>
         </div>
-        <div class="score">
-            <h3>Points:  <span id="playerPoints">0</span></h3>
-            <h3>Time:  <span id="time"></span></h3>
-        </div>
-        <div class="table">
-            <div class="discardDeck deck">
-                <div style="order: 2" class="deckTitle">Discard deck</div>
-                <div style="order: 1" class="card">
-                    <div class="discardCardWord" data-DCid="0"></div>
-                    <div class="discardCardWord" data-DCid="1"></div>
-                    <div class="discardCardWord" data-DCid="2"></div>
-                    <div class="discardCardWord" data-DCid="3"></div>
-                    <div></div>
-                    <div class="discardCardWord" data-DCid="4"></div>
-                    <div class="discardCardWord" data-DCid="5"></div>
-                    <div class="discardCardWord" data-DCid="6"></div>
-                    <div class="discardCardWord" data-DCid="7"></div>
+        <div id="game">
+            <div class="score">
+                <h3>Points:  <span id="playerPoints">0</span></h3>
+                <h3>Time:  <span id="time"></span></h3>
+            </div>
+            <div class="table" id="table">
+                <div class="discardDeck deck">
+                    <div style="order: 2" class="deckTitle">Discard deck</div>
+                    <div style="order: 1" class="card">
+                        <div class="discardCardWord" data-DCid="0"></div>
+                        <div class="discardCardWord" data-DCid="1"></div>
+                        <div class="discardCardWord" data-DCid="2"></div>
+                        <div class="discardCardWord" data-DCid="3"></div>
+                        <div></div>
+                        <div class="discardCardWord" data-DCid="4"></div>
+                        <div class="discardCardWord" data-DCid="5"></div>
+                        <div class="discardCardWord" data-DCid="6"></div>
+                        <div class="discardCardWord" data-DCid="7"></div>
+                    </div>
+                </div>
+                <div class="playerDeck deck">
+                    <div style="order: 2" class="deckTitle">Player deck</div>
+                    <div style="order: 1" class="card" id="playerCardTop">
+                        <div class="playerCardWord" data-PCid="0"></div>
+                        <div class="playerCardWord" data-PCid="1"></div>
+                        <div class="playerCardWord" data-PCid="2"></div>
+                        <div class="playerCardWord" data-PCid="3"></div>
+                        <div id="match"></div>
+                        <div class="playerCardWord" data-PCid="4"></div>
+                        <div class="playerCardWord" data-PCid="5"></div>
+                        <div class="playerCardWord" data-PCid="6"></div>
+                        <div class="playerCardWord" data-PCid="7"></div>
+                    </div>
                 </div>
             </div>
-            <div class="playerDeck deck">
-                <div style="order: 2" class="deckTitle">Player deck</div>
-                <div style="order: 1" class="card" id="playerCardTop">
-                    <div class="playerCardWord" data-PCid="0"></div>
-                    <div class="playerCardWord" data-PCid="1"></div>
-                    <div class="playerCardWord" data-PCid="2"></div>
-                    <div class="playerCardWord" data-PCid="3"></div>
-                    <div id="match"></div>
-                    <div class="playerCardWord" data-PCid="4"></div>
-                    <div class="playerCardWord" data-PCid="5"></div>
-                    <div class="playerCardWord" data-PCid="6"></div>
-                    <div class="playerCardWord" data-PCid="7"></div>
-                </div>
+        </div>
+        <div id="wordList" class="hidden">
+            <div id="wordListTable">
+                
             </div>
         </div>
-        
         <!-- <h4>Right click on your card's words to see alternative text</h4> -->
         <h7 class="credits">Credits: Match it! is an online game based on the game "Spot it" or "Dobble", which in turn is based on "game of insects" created by the mathematician Jacques Cottereau who was inspired by Kirkman's schoolgirl problem
         </h7>

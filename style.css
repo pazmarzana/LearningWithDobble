@@ -4,9 +4,6 @@
     box-sizing: border-box;
 }
 body{
-
-    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
-    
     font-family: 'Roboto', sans-serif;
     font-size: large;
 }
@@ -16,8 +13,6 @@ body{
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    height:100vh;
-    /* border: 1px solid orange; */
 }
 .head{
     background-color: rgb(229, 245, 245);
@@ -28,7 +23,6 @@ body{
     justify-content: space-around;
     align-items: center;
     margin-bottom: 2em;
-    /* border: 1px solid violet; */
 }
 .score h3{
     padding: 0.3em;
@@ -36,7 +30,6 @@ body{
     font-size: xx-large;
 }
 button{
-    /* font-family: 'Palette Mosaic', cursive; */
     font-family: 'Righteous', cursive;
     padding: 0.5em;
     margin-top: 2em;
@@ -49,7 +42,6 @@ button{
 }
 .title{
     font-family: 'Palette Mosaic', cursive;
-    /* font-family: 'Permanent Marker', cursive; */
     /* font-size: 64px; 40 32 24*/
     font-size: 96px;
 }
@@ -58,7 +50,6 @@ button{
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    /* border: 1px solid red; */
 }
 .options button{
     padding: 0.5em;
@@ -69,15 +60,20 @@ button{
     background-color: teal;
     color:rgb(229, 245, 245);
 }
+#game {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 75vh; 
+}
 .table {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 70vh;
-    /* border: 1px blue; */
 }
 .deck {
     display: flex;
@@ -86,13 +82,11 @@ button{
     justify-content: space-around;
     align-items: center;
     width: 40%;
-    /* border: 1px solid green; */
 }
 .deckTitle{
     width: 40%;
     text-align: center;
     font-size: large;
-    /* border: 1px red; */
 }
 .card {
     background-color: white;
@@ -104,7 +98,6 @@ button{
     padding: 4em;
     margin: 2em 2em 2em 2em;
     border-radius: 15%;
-    /* border: 1px yellow; */
     box-shadow: 15px 15px 53px rgb(0, 80, 80);
 }
 .deck div div {
@@ -118,7 +111,6 @@ button{
     margin: 3px;
     font-size: xx-large;
     font-family: "Comic Sans MS";
-    border: 1px yellow;
 }
 .deck div div:nth-child(1) {
     color: blueviolet;
@@ -173,7 +165,6 @@ img{
     width: 50px;
     height: 50px;
 }
-
 .matched {
     animation: myRotate 1s ;
 }
@@ -198,9 +189,38 @@ img{
  
 .credits{
     font-size: small;
-    margin-top: 2em;
+    margin-top: 3em;
+}
+.hidden{
+    display: none !important;
+}
+#wordList{
+    display: flex;
+    justify-content: center;
+}
+#wordListTable{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    width: 60%;
+    padding: 3em 2em 2em 5em;
+}
+#wordListTable div{
+    font-family: "Comic Sans MS";
+    font-size: x-large;
+    color:rgb(1, 70, 70);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    padding: 0.5em;
 }
 @media only screen and (max-width: 2300px) {
+    .title{
+        font-size: 64px;
+    }
     .deckTitle{
         width: 90%;
     }
@@ -227,6 +247,9 @@ img{
   }
 
   @media only screen and (max-width: 1000px) {
+    .title{
+        font-size: 40px;
+    }
     img{
         width: 60px;
         height: 60px;
@@ -235,8 +258,14 @@ img{
         margin: 0.5px;
         font-size: medium;
     }
+    #wordListTable{
+        width: 80%;
+    }
   }
   @media only screen and (max-width: 600px) {
+    .title{
+        font-size: 32px;
+    }
     .head{
         font-size: small;
     }
@@ -248,8 +277,24 @@ img{
     .deck div div {
         font-size: small;
     }
+    #wordListTable{
+        width: 90%;
+    }
+    .options button{
+        font-size: medium;
+        font-weight: 400;
+        padding: 0.5em;
+    }
+    button{
+        font-size: medium;
+        font-weight: 400;
+        padding: 0.5em;
+    }
   }
   @media only screen and (max-width: 500px) {
+    .title{
+        font-size: 24px;
+    }
     .deck div div {
         font-size: x-small;
     }
@@ -257,25 +302,23 @@ img{
         width: 30px;
         height: 30px;
     }
+    #wordListTable{
+        padding: 2em 2em 2em 2em;
+    }
   }
 
 
-
-/* -------------------------------- */
-.wordList{
-
-}
-
-
-/* ------------------- */
-.instructions{
+/* --------Instructions Page----------- */
+#instructions{
+    background-color: white;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-start;
+    height: 96vh;
     font-size: x-large;
-    padding-bottom: 2em;
-    /* margin: 2em; */
+    padding: 4em;
+    margin: 2em;
 }
 .instructions h2{
     padding-top: 3em;
