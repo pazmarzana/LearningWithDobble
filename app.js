@@ -322,8 +322,10 @@ function drawWordList(){
         }
         wordListDrawn.classList.remove('hidden')
         gameDrawn.classList.add('hidden')
+        seeWordsButtonDrawn.innerHTML="Back to Main"
     }else{
         wordListDrawn.classList.add('hidden')
         gameDrawn.classList.remove('hidden')
+        seeWordsButtonDrawn.innerHTML="See Words"
     }
 }
