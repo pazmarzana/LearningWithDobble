@@ -29,14 +29,14 @@ body{
 .score h3{
     padding: 0.3em;
     font-family: 'Righteous', cursive;
-    font-size: xx-large;
+    font-size: 2em;
     color: #476098;
 }
 button{
     font-family: 'Righteous', cursive;
     padding: 0.7em;
     margin-top: 2em;
-    font-size: x-large;
+    font-size: 1.5em;
     font-weight: 600;
     background-color: #A7489B;
     color:rgb(229, 245, 245);
@@ -93,7 +93,7 @@ button{
     padding: 0.7em;
     margin: 0.5em;
     width: 100%;
-    font-size: x-large;
+    font-size: 1.5em;
     font-weight: 600;
     background-color: #A7489B;
     color:rgb(229, 245, 245);
@@ -255,6 +255,49 @@ img{
     align-items: center;
     padding: 0.5em;
 }
+@media (max-aspect-ratio: 8/10) {
+    /* div {
+      background: rgb(255, 153, 221);  
+    } */
+    #game {
+        /* display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%; */
+        /* height: 100vh;  */
+    }
+    .table {
+        /* display: flex; */
+        flex-wrap: wrap;
+        flex-direction: row;
+        /* justify-content: center; */
+        height: 100%;
+    }
+    .deck {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        /* height: 40%; */
+        width: 100%;
+    }
+    .card {
+        /* background-color: white;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between; */
+        /* width: 80%; */
+        height: 100%;
+        padding: 4em;
+        margin: 2em 2em 2em 2em;
+        /* border-radius: 15%; */
+        /* box-shadow: 15px 15px 53px #925627; */
+    }
+  }
+
 @media only screen and (max-width: 2300px) {
     .title{
         font-size: 64px;
@@ -274,8 +317,8 @@ img{
         font-size: x-large;
     }
     img{
-        width: 100px;
-        height: 100px;
+        width: 120px;
+        height: 120px;
     }
     @keyframes myTranslate {
         100% {
@@ -288,9 +331,12 @@ img{
     .title{
         font-size: 40px;
     }
+    .score h3{
+        font-size: 1.5em;
+    }
     img{
-        width: 60px;
-        height: 60px;
+        width: 100px;
+        height: 100px;
     }
     .deck div div {
         margin: 0.5px;
@@ -334,11 +380,11 @@ img{
         font-size: 24px;
     }
     .deck div div {
-        font-size: x-small;
+        font-size: large;
     }
     img{
-        width: 30px;
-        height: 30px;
+        width: 90px;
+        height: 90px;
     }
     #wordListTable{
         padding: 2em 2em 2em 2em;
