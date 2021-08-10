@@ -110,6 +110,7 @@ const shuffleArray = array => {
 
 function drawDiscardCard(cardNumber,cant,position){
     for(let i=0;i<8;i++){
+        discardCardDrawn[i].classList.remove("smaller")
         if(cant==1){
             discardCardDrawn[i].innerHTML=''
             // discardCardDrawn[i].classList.remove("smaller")
@@ -131,7 +132,7 @@ function drawDiscardCard(cardNumber,cant,position){
                 picture.src = words[cards[cardNumber][i]].image 
                 picture.alt = words[cards[cardNumber][i]].text1 
                 discardCardDrawn[i].appendChild(picture)
-                // discardCardDrawn[i].classList.add("smaller")
+                discardCardDrawn[i].classList.add("smaller")
             }else{
                 // discardCardDrawn[i].innerHTML=''
                 // discardCardDrawn[i].classList.remove("smaller")
@@ -159,6 +160,7 @@ function drawDiscardCard(cardNumber,cant,position){
 }
 function drawPlayerCard(cardNumber,cant,position){
     for(let i=0;i<8;i++){
+        playerCardDrawn[i].classList.remove("smaller")
         if(cant==1){
 
             playerCardDrawn[i].innerHTML=''
@@ -183,7 +185,7 @@ function drawPlayerCard(cardNumber,cant,position){
                 picture.src = words[cards[cardNumber][i]].image 
                 picture.alt = words[cards[cardNumber][i]].text1 
                 playerCardDrawn[i].appendChild(picture)
-                // playerCardDrawn[i].classList.add("smaller")
+                playerCardDrawn[i].classList.add("smaller")
             }else{
 
             }

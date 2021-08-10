@@ -1,55 +1,57 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
+body {
     font-family: 'Roboto', sans-serif;
-    font-size: large;
     color: #476098;
     font-weight: bold;
+    font-size: 1em;
 }
-.container{
+.container {
     background-color:#F18F43;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
 }
-.head{
+/* ----------------HEAD------------------- */
+.head {
     background-color: #f3ec78;
-    width: 100%;
-    height: 20vh;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    margin-bottom: 2em;
+    width: 100%;
+    height: 20vh;
+    margin-bottom: 0.5em;
 }
-.score h3{
-    padding: 0.3em;
-    font-family: 'Righteous', cursive;
-    font-size: 2em;
-    color: #476098;
+.options {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
-button{
+.head button {
     font-family: 'Righteous', cursive;
+    width: 100%;
     padding: 0.7em;
-    margin-top: 2em;
-    font-size: 1.5em;
-    font-weight: 600;
+    margin: 0.5em;
+    font-size: 0.7em;
+    font-weight: 400;
     background-color: #A7489B;
     color:rgb(229, 245, 245);
     border-radius: 50%;
-    box-shadow: 5px 5px 10px rgba(1, 88, 88,.5);
+    box-shadow: 5px 5px 10px #8f8b46;
 }
-.title{
+.title {
     font-family: 'Palette Mosaic', cursive;
-    /* font-size: 64px; 40 32 24*/
-    font-size: 120px;
+    /* font-size: 120 64 40 32 24*/
+    font-size: 24px;
 }
 .gradient-text {
-
+    
     background: #CA4246;
     background-color: #CA4246;
     background-image: linear-gradient(
@@ -77,41 +79,34 @@ button{
         #476098 83.333%, 
         #A7489B 83.333%);
         
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent; 
-        background-size: 30%;
-        background-repeat: repeat;
-        text-shadow: 2px cornsilk;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    background-size: 30%;
+    background-repeat: repeat;
+    text-shadow: 2px cornsilk;
 }
-.options{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-}
-.options button{
-    padding: 0.7em;
-    margin: 0.5em;
-    width: 100%;
-    font-size: 1.5em;
-    font-weight: 600;
-    background-color: #A7489B;
-    color:rgb(229, 245, 245);
-}
+/* ----------------GAME SECTION------------------- */
 #game {
     display: flex;
-    flex-wrap: nowrap;
+    /* flex-wrap: nowrap; */
     flex-direction: column;
-    justify-content: space-around;
+    /* justify-content: space-around; */
     align-items: center;
-    width: 100%;
-    height: 75vh; 
+    /* width: 100%; */
+    min-height: 75vh; 
+}
+.score h3 {
+    font-family: 'Righteous', cursive;
+    color: #476098;
+    font-size: 1.2em;
+    padding: 0.2em;
 }
 .table {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 .deck {
     display: flex;
@@ -119,90 +114,85 @@ button{
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    width: 40%;
+    width: 100%;
+    margin-top: 2px;
 }
-.deckTitle{
-    width: 40%;
+.deckTitle {
     text-align: center;
-    font-size: large;
+    font-size: 1em;
+    width: 40%;
+    margin: 0.5em 0em 1em 0em;
 }
 .card {
     background-color: white;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    width: 80%;
-    height: 60vh;
-    padding: 4em;
-    margin: 2em 2em 2em 2em;
     border-radius: 15%;
     box-shadow: 15px 15px 53px #925627;
+    width: 90%;
+    height: 45vh;
+    padding: 2em;
 }
 .deck div div {
+    font-family: "Comic Sans MS";
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-content: center;
-    flex: 30%;
-    width: 140px;
-    height: 140px;
-    margin: 3px;
-    font-size: xx-large;
-    font-family: "Comic Sans MS";
-    /* font-weight: 800; */
+    flex: 33%;
+    font-size: 1em;
 }
 .deck div div:nth-child(1) {
-    color: blueviolet;
+    color: #A7489B;
     transform: rotate(-25deg);
 }
 .deck div div:nth-child(2) {
-    color: green;
+    color: #9aad58;
     transform: rotate(10deg);
 }
 .deck div div:nth-child(3) {
-    color: red;
+    color: #CA4246;
     transform: rotate(40deg);
 }
 .deck div div:nth-child(4) {
-    color: orange;
+    color: #F18F43;
     transform: rotate(15deg) translateX(40%);
 }
 .deck div div:nth-child(6) {
-    color: yellowgreen;
+    color: #a7cf24;
     transform: rotate(-15deg) translateX(-40%);
 }
 .deck div div:nth-child(7) {
-    color: blue;
+    color: #476098;
     transform: rotate(35deg);
 }
 .deck div div:nth-child(8) {
-    color: rgb(255, 0, 106);
+    color: #E16541;
     transform: rotate(-15deg);
 }
 .deck div div:nth-child(9) {
-    color: rgb(0, 179, 255);
+    color: #A7489B;
     transform: rotate(25deg);
 }
 /* .correct{
     color: green;
-    font-size: xx-large;
 }
 .incorrect{
     color: red;
-    font-size: xx-large;
 } */
-img{
-    width: 150px;
-    height: 150px;
+.deck img {
     object-fit: contain;
+    width: 70px;
+    height: 70px;
 }
-/* .smaller{
-    font-size: xx-small;
+div.card div.smaller {
+    font-size: 0.9em;
 }
-.smaller img{
-    width: 100px;
-    height: 100px;
-} */
+div.card div.smaller img{
+    width: 30px;
+    height: 30px;
+}
 .matched {
     animation: myRotate 1s ;
 }
@@ -221,196 +211,223 @@ img{
   }
 @keyframes myTranslate {
     100% {
-        transform: translateX(-125%);
+        transform: translateY(-110%);
     }
 }
  
-.credits{
-    font-size: small;
-    margin-top: 3em;
+.credits {
+    font-size: 0.5em;
+    margin: 3em 2em 2em 2em;
 }
-.hidden{
+.hidden {
     display: none !important;
 }
-#wordList{
+/* ------------WORD LIST---------------- */
+#wordList {
     display: flex;
     justify-content: center;
 }
-#wordListTable{
+#wordListTable {
     background-color: white;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-content: center;
-    width: 60%;
-    padding: 3em 2em 2em 5em;
+    width: 95%;
+    padding: 2em;
 }
-#wordListTable div{
+#wordListTable div {
     font-family: "Comic Sans MS";
-    font-size: x-large;
     color:rgb(1, 70, 70);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
     align-items: center;
-    padding: 0.5em;
+    width: 100%;
+    font-size: 1em;
 }
-@media (max-aspect-ratio: 8/10) {
-    /* div {
-      background: rgb(255, 153, 221);  
-    } */
-    #game {
-        /* display: flex;
-        flex-wrap: nowrap;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        width: 100%; */
-        /* height: 100vh;  */
-    }
-    .table {
-        /* display: flex; */
-        flex-wrap: wrap;
-        flex-direction: row;
-        /* justify-content: center; */
-        height: 100%;
-    }
-    .deck {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        /* height: 40%; */
-        width: 100%;
-    }
-    .card {
-        /* background-color: white;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between; */
-        /* width: 80%; */
-        height: 100%;
-        padding: 4em;
-        margin: 2em 2em 2em 2em;
-        /* border-radius: 15%; */
-        /* box-shadow: 15px 15px 53px #925627; */
-    }
-  }
+#wordListTable div div{
+    width: 70px;
+    margin: 0.5em 1em;
+}
+#wordListTable img {
+    object-fit: contain;
+    width: 70px;
+    height: 70px;
+}
 
-@media only screen and (max-width: 2300px) {
-    .title{
-        font-size: 64px;
-    }
-    .deckTitle{
-        width: 90%;
-    }
-    .card {
-        width: 90%;
-        padding: 1em;
-        margin: 1em 1em 1em 1em;
-    }
-    .deck div div {
-        width: 30%;
-        height: 30%;
-        margin: 1px;
-        font-size: x-large;
-    }
-    img{
-        width: 120px;
-        height: 120px;
+
+
+/* --------------MEDIA------------------ */
+/* --------------MEDIA------------------ */
+
+@media (min-aspect-ratio: 1/1) {
+    .table {
+        flex-direction: row;
+        flex-wrap: nowrap;
     }
     @keyframes myTranslate {
         100% {
             transform: translateX(-110%);
         }
     }
-  }
+}
 
-  @media only screen and (max-width: 1000px) {
-    .title{
+@media only screen and (min-width: 500px) {
+    .title {
+        font-size: 32px;
+    }
+    .score h3 {
+        font-size: 1.3em;
+    }
+    .deck {
+        width: 95%;
+    }
+    .deck div div {
+        font-size: 1.4em;
+    }
+    .deck img {
+        width: 90px;
+        height: 90px;
+    }
+    #wordListTable div {
+        font-size: 1.1em;
+    }
+    #wordListTable div div{
+        width: 90px;
+        margin: 1em 1.2em;
+    }
+    #wordListTable img {
+        width: 90px;
+        height: 90px;
+    }
+
+}
+
+@media only screen and (min-width: 600px) {
+    .title {
         font-size: 40px;
     }
-    .score h3{
+    .head button  {
+        font-size: 1em;
+    }
+    .deck {
+        width: 85%;
+    }
+    .deck div div {
         font-size: 1.5em;
     }
-    img{
+    div.card div.smaller {
+        font-size: 1.1em;
+    }
+    div.card div.smaller img{
+        width: 50px;
+        height: 50px;
+    }
+    #wordListTable div {
+        font-size: 1.2em;
+    }
+    #wordListTable div div{
+        width: 120px;
+        margin: 1em 2em;
+    }
+    #wordListTable img {
+        width: 120px;
+        height: 120px;
+    }
+  }
+@media only screen and (min-width: 1000px) {
+    .title {
+        font-size: 64px;
+    }
+    .score h3 {
+        font-size: 1.7em;
+    }
+    .deck {
+        width: 70%;
+    }
+    .deck img {
         width: 100px;
         height: 100px;
     }
     .deck div div {
         margin: 0.5px;
-        font-size: medium;
+        font-size: 1.7em;
     }
-    #wordListTable{
+    .credits {
+        font-size: 0.9em;
+    }
+
+}
+@media only screen and (min-width: 2300px) {
+    .title {
+        font-size: 120px;
+    }
+    .head button {
+        font-size: 1.2em;
+    }
+    #game {
+        padding-top: 3em;
+    }
+    #table {
+        padding-top: 2em;
+    }
+    .card {
         width: 80%;
-    }
-  }
-  @media only screen and (max-width: 600px) {
-    .title{
-        font-size: 32px;
-    }
-    .head{
-        font-size: small;
-    }
-    .options button{
-        font-size: small;
-        padding: 0.2em;
-        margin: 0.2em;
+        height: 50vh;
+        padding: 2em;
     }
     .deck div div {
-        font-size: small;
+        font-size: 2em;
     }
-    #wordListTable{
-        width: 90%;
+    .deck img {
+        width: 120px;
+        height: 120px;
     }
-    .options button{
-        font-size: medium;
-        font-weight: 400;
-        padding: 0.5em;
+    div.card div.smaller {
+        font-size: 1.3em;
     }
-    button{
-        font-size: medium;
-        font-weight: 400;
-        padding: 0.5em;
+    div.card div.smaller img{
+        width: 60px;
+        height: 60px;
     }
-  }
-  @media only screen and (max-width: 500px) {
-    .title{
-        font-size: 24px;
+    @keyframes myTranslate {
+        100% {
+            transform: translateX(-125%);
+        }
     }
-    .deck div div {
-        font-size: large;
+    .credits {
+        font-size: 1.2em;
     }
-    img{
-        width: 90px;
-        height: 90px;
-    }
-    #wordListTable{
-        padding: 2em 2em 2em 2em;
+    #wordListTable div div{
+        margin: 1em 3em;
     }
   }
+
+  
+
 
 
 /* --------Instructions Page----------- */
-#instructions{
+#instructions {
     background-color: white;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-start;
     height: 96vh;
-    font-size: x-large;
+    font-size: 2em;
     padding: 4em;
-    margin: 2em;
+    margin: 1em;
 }
-.instructions h2{
+.instructions h2 {
     padding-top: 3em;
     padding-bottom: 3em;
 }
-.instructions h3{
+.instructions h3 {
     padding-top: 4em;
 }
-.instructions h3, .instructions h4, .instructions h5{
+.instructions h3, .instructions h4, .instructions h5 {
     padding-bottom: 2em;
 }
