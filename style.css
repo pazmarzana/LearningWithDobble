@@ -183,8 +183,8 @@ body {
 } */
 .deck img {
     object-fit: contain;
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
 }
 div.card div.smaller {
     font-size: 0.9em;
@@ -257,7 +257,28 @@ div.card div.smaller img{
     height: 70px;
 }
 
-
+/* --------Instructions Page----------- */
+#instructions {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    min-height: 96vh;
+    font-size: 1.2em;
+    padding: 2em;
+    margin: 1em;
+}
+#instructions h2 {
+    /* margin-top: 3em; */
+    margin-bottom: 2em;
+}
+#instructions h3 {
+    margin-top: 2em;
+}
+#instructions h3, #instructions h4, #instructions h5 {
+    margin-bottom: 1.4em;
+}
 
 /* --------------MEDIA------------------ */
 /* --------------MEDIA------------------ */
@@ -358,6 +379,9 @@ div.card div.smaller img{
     .credits {
         font-size: 0.9em;
     }
+    #instructions {
+        font-size: 1.5em;
+    }
 
 }
 @media only screen and (min-width: 2300px) {
@@ -403,31 +427,10 @@ div.card div.smaller img{
     #wordListTable div div{
         margin: 1em 3em;
     }
+
   }
 
   
 
 
 
-/* --------Instructions Page----------- */
-#instructions {
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: flex-start;
-    height: 96vh;
-    font-size: 2em;
-    padding: 4em;
-    margin: 1em;
-}
-.instructions h2 {
-    padding-top: 3em;
-    padding-bottom: 3em;
-}
-.instructions h3 {
-    padding-top: 4em;
-}
-.instructions h3, .instructions h4, .instructions h5 {
-    padding-bottom: 2em;
-}
