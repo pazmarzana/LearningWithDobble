@@ -93,7 +93,7 @@ body {
     /* justify-content: space-around; */
     align-items: center;
     /* width: 100%; */
-    min-height: 75vh; 
+    min-height: 74.5vh; 
 }
 .score h3 {
     font-family: 'Righteous', cursive;
@@ -270,7 +270,6 @@ div.card div.smaller img{
     margin: 1em;
 }
 #instructions h2 {
-    /* margin-top: 3em; */
     margin-bottom: 2em;
 }
 #instructions h3 {
