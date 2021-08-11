@@ -88,11 +88,8 @@ body {
 /* ----------------GAME SECTION------------------- */
 #game {
     display: flex;
-    /* flex-wrap: nowrap; */
     flex-direction: column;
-    /* justify-content: space-around; */
     align-items: center;
-    /* width: 100%; */
     min-height: 74.5vh; 
 }
 .score h3 {
@@ -125,14 +122,17 @@ body {
 }
 .card {
     background-color: white;
-    display: flex;
+    /* display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-between; */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     border-radius: 15%;
     box-shadow: 15px 15px 53px #925627;
-    width: 90%;
-    height: 45vh;
-    padding: 2em;
+    width: 350px;
+    height: 350px;
+    grid-gap: 20px;
+    padding: 40px;
 }
 .deck div div {
     font-family: "Comic Sans MS";
@@ -140,12 +140,13 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     align-content: center;
-    flex: 33%;
+    width: 60px;
     font-size: 1em;
+    
 }
 .deck div div:nth-child(1) {
     color: #A7489B;
-    transform: rotate(-25deg);
+    transform: rotate(-20deg);
 }
 .deck div div:nth-child(2) {
     color: #9aad58;
@@ -153,19 +154,22 @@ body {
 }
 .deck div div:nth-child(3) {
     color: #CA4246;
-    transform: rotate(40deg);
+    transform: rotate(20deg);
 }
 .deck div div:nth-child(4) {
     color: #F18F43;
-    transform: rotate(15deg) translateX(40%);
+    transform: rotate(15deg) translateX(70%) translateY(-20%);
+}
+.deck div div:nth-child(5) {
+    z-index: 0;
 }
 .deck div div:nth-child(6) {
     color: #a7cf24;
-    transform: rotate(-15deg) translateX(-40%);
+    transform: rotate(-15deg) translateX(-70%) translateY(-20%);
 }
 .deck div div:nth-child(7) {
     color: #476098;
-    transform: rotate(35deg);
+    transform: rotate(20deg);
 }
 .deck div div:nth-child(8) {
     color: #E16541;
@@ -173,14 +177,8 @@ body {
 }
 .deck div div:nth-child(9) {
     color: #A7489B;
-    transform: rotate(25deg);
+    transform: rotate(15deg);
 }
-/* .correct{
-    color: green;
-}
-.incorrect{
-    color: red;
-} */
 .deck img {
     object-fit: contain;
     width: 60px;
@@ -190,8 +188,8 @@ div.card div.smaller {
     font-size: 0.9em;
 }
 div.card div.smaller img{
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
 }
 .matched {
     animation: myRotate 1s ;
@@ -211,7 +209,8 @@ div.card div.smaller img{
   }
 @keyframes myTranslate {
     100% {
-        transform: translateY(-110%);
+        /* transform: translateY(-110%); */
+        transform: translateY(-395px);
     }
 }
  
@@ -282,10 +281,14 @@ div.card div.smaller img{
 /* --------------MEDIA------------------ */
 /* --------------MEDIA------------------ */
 
+/* if it is wider than high, it will show both cards in the same row */
 @media (min-aspect-ratio: 1/1) {
     .table {
         flex-direction: row;
         flex-wrap: nowrap;
+    }
+    .card {
+        margin: 10px;
     }
     @keyframes myTranslate {
         100% {
@@ -305,11 +308,7 @@ div.card div.smaller img{
         width: 95%;
     }
     .deck div div {
-        font-size: 1.4em;
-    }
-    .deck img {
-        width: 90px;
-        height: 90px;
+        font-size: 1.2em;
     }
     #wordListTable div {
         font-size: 1.1em;
@@ -332,18 +331,8 @@ div.card div.smaller img{
     .head button  {
         font-size: 1em;
     }
-    .deck {
-        width: 85%;
-    }
     .deck div div {
-        font-size: 1.5em;
-    }
-    div.card div.smaller {
-        font-size: 1.1em;
-    }
-    div.card div.smaller img{
-        width: 50px;
-        height: 50px;
+        font-size: 1.3em;
     }
     #wordListTable div {
         font-size: 1.2em;
@@ -364,16 +353,18 @@ div.card div.smaller img{
     .score h3 {
         font-size: 1.7em;
     }
-    .deck {
-        width: 70%;
-    }
-    .deck img {
-        width: 100px;
-        height: 100px;
+    .card {
+        width: 430px;
+        height: 430px;
+        margin: 20px;
     }
     .deck div div {
-        margin: 0.5px;
-        font-size: 1.7em;
+        width: 80px;
+        font-size: 1.4em;
+    }
+    .deck img {
+        width: 80px;
+        height: 80px;
     }
     .credits {
         font-size: 0.9em;
@@ -397,16 +388,17 @@ div.card div.smaller img{
         padding-top: 2em;
     }
     .card {
-        width: 80%;
-        height: 50vh;
-        padding: 2em;
+        width: 470px;
+        height: 470px;
+        margin: 30px;
     }
     .deck div div {
-        font-size: 2em;
+        font-size: 1.8em;
+        width: 100px;
     }
     .deck img {
-        width: 120px;
-        height: 120px;
+        width: 100px;
+        height: 100px;
     }
     div.card div.smaller {
         font-size: 1.3em;
@@ -414,11 +406,6 @@ div.card div.smaller img{
     div.card div.smaller img{
         width: 60px;
         height: 60px;
-    }
-    @keyframes myTranslate {
-        100% {
-            transform: translateX(-125%);
-        }
     }
     .credits {
         font-size: 1.2em;

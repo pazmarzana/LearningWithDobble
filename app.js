@@ -237,9 +237,6 @@ function newGame(){
 function checkWord(e){
     if( cards[discardCard].includes(cards[playerCard][e.currentTarget.dataset.pcid]) ){
         let place = e.currentTarget.dataset.pcid
-        // match.classList.add('correct')
-        // match.classList.remove('incorrect')
-        // match.innerHTML = "correct!"
         playerCardDrawn[place].classList.add('matched')
         let aux = cards[discardCard].indexOf(cards[playerCard][place])
         discardCardDrawn[aux].classList.add('matched')
@@ -247,7 +244,6 @@ function checkWord(e){
         setTimeout(()=>discardCardDrawn[aux].classList.remove('matched'),1000);
         setTimeout(()=>playerCardTopDrawn.classList.add('wonCard'),1000);
         setTimeout(()=>playerCardTopDrawn.classList.remove('wonCard'),2000);
-        // setTimeout(()=>match.innerHTML = "", 1000);
         playerPoints +=10
         playerPointsDrawn.innerHTML = playerPoints
         discardCard = playerCard
@@ -258,10 +254,6 @@ function checkWord(e){
     }else{
         playerPoints -=5
         playerPointsDrawn.innerHTML = playerPoints
-        // match.classList.add('incorrect')
-        // match.classList.remove('correct')
-        // match.innerHTML = "incorrect!"
-        // setTimeout(()=>match.innerHTML = "", 1000);
     }
 
 }
