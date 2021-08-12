@@ -209,8 +209,8 @@ div.card div.smaller img{
   }
 @keyframes myTranslate {
     100% {
-        /* transform: translateY(-110%); */
-        transform: translateY(-395px);
+        transform: translateY(-110%);
+        /* transform: translateY(-395px); */
     }
 }
  
