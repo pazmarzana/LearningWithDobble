@@ -258,14 +258,22 @@ function checkWord(e){
 
 }
 function playerCardPlay(e){
-    let audio = new Audio(words[cards[playerCard][e.currentTarget.dataset.pcid]].sound);
-    audio.volume = 0.2;
-    audio.play();
+    if(playing){
+        let audio = new Audio(words[cards[playerCard][e.currentTarget.dataset.pcid]].sound);
+        audio.volume = 0.2;
+        audio.play();
+    } else {
+        alert("Click Play button to play. You must find and click on the item in your card that matches the card in the discard deck.");
+    }
 }
 function discardCardPlay(e){
-    let audio = new Audio(words[cards[discardCard][e.currentTarget.dataset.dcid]].sound);
-    audio.volume = 0.2;
-    audio.play();
+    if(playing){
+        let audio = new Audio(words[cards[discardCard][e.currentTarget.dataset.dcid]].sound);
+        audio.volume = 0.2;
+        audio.play();
+    } else {
+        alert("Click Play button to play. You must find and click on the item in your card that matches the card in the discard deck.");
+    }
 }
 
 // ---------Event Listeners-----------------
