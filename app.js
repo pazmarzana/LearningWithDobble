@@ -236,6 +236,13 @@ function newGame(){
     playerCard = Math.floor(Math.random()*57)
     drawPlayerCard(playerCard,1,0)
     playerCardDrawn.forEach(x=>x.addEventListener('click',checkWord))
+
+    //if the list of words is showing, we hide it
+    if(! wordListDrawn.classList.contains('hidden')){
+        wordListDrawn.classList.add('hidden')
+        gameDrawn.classList.remove('hidden')
+        seeWordsButtonDrawn.innerHTML="See Words"
+    }
 }
 
 function checkWord(e){
