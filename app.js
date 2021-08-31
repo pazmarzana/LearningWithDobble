@@ -87,8 +87,49 @@ const TIMEGAME = 120
 let time = TIMEGAME
 let playing = false
 let timerId = null
-// const match=document.querySelector('#match')
-// match.innerHTML =''
+
+// Get the modal
+// var modalChoseDeckDrawn = document.getElementById("modalChoseDeck");
+var modalHowToPlayDrawn = document.getElementById("modalHowToPlay");
+var modalGameOverDrawn = document.getElementById("modalGameOver");
+// Get the button that opens the modal
+// var btnChoseDeckDrawn = document.getElementById("btnChoseDeck");
+var btnContinuePlayingDrawn = document.getElementById("btnContinuePlaying");
+var btnCancelPlayingDrawn = document.getElementById("btnCancelPlaying");
+// var btnHowToPlayDrawn = document.getElementById("btnHowToPlay");
+
+// Get the <span> element that closes the modal
+// var closeChoseDeckDrawn = document.getElementById("closeChoseDeck");
+var closeHowToPlayDrawn = document.getElementById("closeHowToPlay");
+var closeGameOverDrawn = document.getElementById("closeGameOver");
+var playerPointsModalGameOverDrawn = document.getElementById("playerPointsModalGameOver");
+// When the user clicks on the button, open the modal
+// btnChoseDeckDrawn.onclick = function() {
+//     modalChoseDeckDrawn.style.display = "block";
+// }
+
+// When the user clicks on <span> (x), close the modal
+// closeChoseDeckDrawn.onclick = function() {
+//     modalChoseDeckDrawn.style.display = "none";
+// }
+closeHowToPlayDrawn.onclick = function() {
+    modalHowToPlayDrawn.style.display = "none";
+}
+closeGameOverDrawn.onclick = function() {
+    modalGameOverDrawn.style.display = "none";
+}
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+//   if (event.target == modalChoseDeckDrawn) {
+//     modalChoseDeckDrawn.style.display = "none";
+//   }
+  if (event.target == modalHowToPlayDrawn) {
+    modalHowToPlayDrawn.style.display = "none";
+  }
+  if (event.target == modalGameOverDrawn) {
+    modalGameOverDrawn.style.display = "none";
+  }
+}
 
 function createCards(){
     let count = 0
@@ -215,10 +256,8 @@ function timeUpdate(){
         clearInterval(timerId)
         playing = false
         playerCardDrawn.forEach(x=>x.removeEventListener('click',checkWord))
-        let seguir=confirm("GAME OVER"+"\nTotal Points: "+ playerPoints+"\n\nPlay Again?")
-        if(seguir){
-            newGame()
-        }
+        playerPointsModalGameOverDrawn.innerHTML = playerPoints;
+        modalGameOverDrawn.style.display = "block";
     }
 }
 
@@ -274,7 +313,8 @@ function playerCardPlay(e){
         audio.volume = 0.2;
         audio.play();
     } else {
-        alert("Click Play button to play. \nYou must find and click on the item in your card that matches the card in the discard deck.");
+        // alert("Click Play button to play. \nYou must find and click on the item in your card (right deck) that matches one item in the discarded card (left deck).");
+        modalHowToPlayDrawn.style.display = "block";
     }
 }
 function discardCardPlay(e){
@@ -283,8 +323,18 @@ function discardCardPlay(e){
         audio.volume = 0.2;
         audio.play();
     } else {
-        alert("Click Play button to play. \nYou must find and click on the item in your card that matches the card in the discard deck.");
+        // alert("Click Play button to play. \nYou must find and click on the item in your card (right deck) that matches one item in the discarded card (left deck).");
+        modalHowToPlayDrawn.style.display = "block";
     }
+}
+function continuePlaying(e){
+    modalGameOverDrawn.style.display = "none";
+    newGame()
+}
+function cancelPlaying(e){
+    modalGameOverDrawn.style.display = "none";
+    playerPoints = 0
+    playerPointsDrawn.innerHTML = playerPoints
 }
 
 // ---------Event Listeners-----------------
@@ -292,6 +342,9 @@ playerCardDrawn.forEach(x=>x.addEventListener('click',playerCardPlay))
 discardCardDrawn.forEach(x=>x.addEventListener('click',discardCardPlay))
 helpButtonDrawn.addEventListener('click',()=>window.location.href='help.html')
 vocabularyButtonDrawn.addEventListener('click',drawWordList)
+btnContinuePlayingDrawn.addEventListener('click',continuePlaying)
+btnCancelPlayingDrawn.addEventListener('click',cancelPlaying)
+
 
 playerCardDrawn.forEach(x=>x.addEventListener('contextmenu', function(e) {
     e.preventDefault();

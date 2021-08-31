@@ -38,7 +38,19 @@
             <div class="options">
                 <button id="helpButton">Help</button>
                 <button id="vocabularyButton">Vocabulary</button>
-                <!-- <button id="choseDeck">Chose Deck</button> -->
+
+                <!-- Trigger/Open The Modal -->
+                    <!-- <button id="btnChoseDeck">Chose Deck</button> -->
+                    <!-- The Modal -->
+                    <!-- <div id="modalChoseDeck" class="modal"> -->
+                        <!-- Modal content -->
+                        <!-- <div class="modal-content modal-contentDeck">
+                            <span class="close" id="closeChoseDeck">&times;</span>
+                            <p>Chose Deck</p>
+                        </div>
+                    </div> -->
+                <!-- Ends Modal --> 
+
                 <!-- <button id="customizeDeck">Customize Deck</button> -->
                 <!-- <button id="volume">Volume</button> -->
             </div>
@@ -90,6 +102,39 @@
                 
             </div>
         </div>
+        <!-- Modal HowToPlay -->
+            <!-- The Modal -->
+            <div id="modalHowToPlay" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close" id="closeHowToPlay">&times;</span>
+                    <h2>How to play.</h2>
+                    <p>To start the game click on the "Play" button.</p>
+                    <p>You must find and click on the item in your card (right deck) that matches one item in the discarded card (left deck).</p>
+                    <p>If you get it right you win 10 points and your card goes to the discard deck, if you make a mistake you lose 5 points.</p>
+                    <p>If you dont know the word/meaning of an item you can find it with a right-click on it.</p>
+                </div>
+            </div>
+        <!-- Ends Modal --> 
+
+        <!-- Modal GameOver -->
+            <!-- The Modal -->
+            <div id="modalGameOver" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close" id="closeGameOver">&times;</span>
+                    <h2>GAME OVER</h2>
+                    <h3>Points: <span id="playerPointsModalGameOver"></span></h3>
+                    <br>
+                    <p>Play Again?</p>
+                    <div class="buttons">
+                        <button id="btnContinuePlaying">Yes</button>
+                        <button id="btnCancelPlaying">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        <!-- Ends Modal --> 
+
         <h7 class="credits">Credits: Match it! is an online game based on the game "Spot it" or "Dobble", which in turn is based on "game of insects" created by the mathematician Jacques Cottereau who was inspired by Kirkman's schoolgirl problem
         </h7>
     </div>
