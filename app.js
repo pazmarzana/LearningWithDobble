@@ -225,6 +225,7 @@ function drawDiscardCard(cardNumber,cant,position){
                 // }else{
                 //     discardCardDrawn[i].innerHTML=words[cards[cardNumber][i]].text1 
                 // }
+                discardCardDrawn[i].innerHTML=''
             }
             // discardCardDrawn[i].innerHTML=''
             // discardCardDrawn[i].innerHTML=words[cards[cardNumber][i]].text1 
@@ -268,7 +269,7 @@ function drawPlayerCard(cardNumber,cant,position){
                 playerCardDrawn[i].appendChild(picture)
                 playerCardDrawn[i].classList.add("smaller")
             }else{
-
+                playerCardDrawn[i].innerHTML=''
             }
         }
     }
