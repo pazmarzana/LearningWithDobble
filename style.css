@@ -329,7 +329,8 @@ div.card div.smaller img{
     padding-left: 1em;
 }
 .head #buttonsChoseDeck button{
-    width: 90%;
+    width: 100%;
+    font-size: 1.1em;
 }
 .vertical{
     display: block;
