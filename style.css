@@ -20,7 +20,7 @@ body {
 .head {
     background-color: #f3ec78;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
     width: 100%;
@@ -28,27 +28,25 @@ body {
     margin-bottom: 0.5em;
 }
 .options {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
 }
 .head button {
     font-family: 'Righteous', cursive;
-    width: 100%;
     padding: 0.7em;
-    margin: 0.5em;
-    font-size: 0.7em;
+    margin: 0.3em;
+    font-size: 0.6em;
     font-weight: 400;
     background-color: #A7489B;
     color:rgb(229, 245, 245);
-    border-radius: 50%;
+    border-radius: 10px;
     box-shadow: 5px 5px 10px #8f8b46;
 }
 .title {
     font-family: 'Palette Mosaic', cursive;
     /* font-size: 120 64 40 32 24*/
-    font-size: 24px;
+    font-size: 40px;
 }
 .gradient-text {
     
@@ -220,11 +218,8 @@ div.card div.smaller img{
     display: none !important;
 }
 /* ------------WORD LIST---------------- */
-#wordList {
-    display: flex;
-    justify-content: center;
-}
-#wordListTable {
+
+#wordListTable .modal-content{
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -255,26 +250,7 @@ div.card div.smaller img{
 }
 
 /* --------Instructions Page----------- */
-#instructions {
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: flex-start;
-    min-height: 96vh;
-    font-size: 1.2em;
-    padding: 2em;
-    margin: 1em;
-}
-#instructions h2 {
-    margin-bottom: 2em;
-}
-#instructions h3 {
-    margin-top: 2em;
-}
-#instructions h3, #instructions h4, #instructions h5 {
-    margin-bottom: 1.4em;
-}
+
 
 
 /* The Modal (background) */
@@ -289,10 +265,10 @@ div.card div.smaller img{
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
-  
-  /* Modal Content/Box */
-  .modal-content {
+}
+
+/* Modal Content/Box */
+.modal-content {
     background-color: #fefefe;
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
@@ -303,8 +279,11 @@ div.card div.smaller img{
     border: 20px solid #888;
     border-radius: 15px;
 }
-.modal-content h2, .modal-content h3, .modal-content p{
-    padding: 0.5em;
+.modal-content h2, .modal-content h3, .modal-content h4, .modal-content p{
+    padding: 0.5em 0em;
+}
+#modalHelp p {
+    color: rgb(109, 109, 109);
 }
 /* Modal Content/Box */
 .modal-contentDeck {
@@ -348,6 +327,15 @@ div.card div.smaller img{
 #playerPointsModalGameOver{
     padding-left: 1em;
 }
+.head #buttonsChoseDeck button{
+    width: 90%;
+}
+.vertical{
+    display: block;
+}
+.horizontal{
+    display: none;
+}
 /* --------------MEDIA------------------ */
 /* --------------MEDIA------------------ */
 
@@ -365,11 +353,26 @@ div.card div.smaller img{
             transform: translateX(-110%);
         }
     }
+    .vertical{
+        display: none;
+    }
+    .horizontal{
+        display: block;
+    }
+    .head {
+        flex-direction: row;
+    }
+    .options {
+        width: 30%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
 }
 
 @media only screen and (min-width: 500px) and (min-height: 600px) {
     .title {
-        font-size: 32px;
+        font-size: 64px;
     }
     .score h3 {
         font-size: 1.3em;
@@ -395,6 +398,14 @@ div.card div.smaller img{
         font-size: 1.3em;
         padding: 50px;
     }
+    #modalWordList .modal-content {
+        font-size: 1.1em;
+        padding: 1em;
+    }
+    .modal-content #wordListTable{
+        width: 100%;
+        padding: 0.5em;
+    }
     #modalGameOver .buttons button{
         font-size: 24px;
       }
@@ -403,7 +414,7 @@ div.card div.smaller img{
 
 @media only screen and (min-width: 600px) and (min-height: 600px) {
     .title {
-        font-size: 40px;
+        font-size: 64px;
     }
     .head button  {
         font-size: 1em;
@@ -412,7 +423,7 @@ div.card div.smaller img{
         font-size: 1.3em;
     }
     #wordListTable div {
-        font-size: 1.2em;
+        font-size: 1.1em;
     }
     #wordListTable div div{
         width: 120px;
@@ -422,10 +433,16 @@ div.card div.smaller img{
         width: 120px;
         height: 120px;
     }
+    #instructions h3, #instructions h4{
+        font-size: 1.4em;
+    }
+    #instructions p {
+        font-size: 1.1em;
+    }
   }
 @media only screen and (min-width: 1000px) and (min-height: 600px) {
     .title {
-        font-size: 64px;
+        font-size: 100px;
     }
     .score h3 {
         font-size: 1.7em;
@@ -446,15 +463,16 @@ div.card div.smaller img{
     .credits {
         font-size: 0.9em;
     }
-    #instructions {
+    #instructions h3, #instructions h4{
         font-size: 1.5em;
+    }
+    #instructions p {
+        font-size: 1.2em;
     }
 
 }
 @media only screen and (min-width: 2300px) and (min-height: 600px){
-    .title {
-        font-size: 120px;
-    }
+
     .head button {
         font-size: 1.2em;
     }
@@ -490,7 +508,11 @@ div.card div.smaller img{
     #wordListTable div div{
         margin: 1em 3em;
     }
-
+  }
+  @media only screen and (min-width: 2300px) and (min-height: 800px){
+    .title {
+        font-size: 120px;
+    }
   }
   @media only screen and (max-width: 750px) and (max-height: 750px){
     .card {
@@ -515,6 +537,7 @@ div.card div.smaller img{
     }
 
   }
+
   @media only screen and (max-width: 600px) and (max-height: 600px){
     .card {
         width: 240px;
@@ -538,7 +561,6 @@ div.card div.smaller img{
     }
 
   }
-
   
 
 
