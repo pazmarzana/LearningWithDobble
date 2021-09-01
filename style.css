@@ -306,6 +306,7 @@ div.card div.smaller img{
     cursor: pointer;
   }
   #modalGameOver .buttons{
+    width: 100%;  
     display: flex;
     justify-content: right;
     padding: 0.5em;

@@ -91,7 +91,7 @@ const gameDrawn=document.querySelector('#game')
 let playerPoints = 0
 let cardsCount = 0
 // const TIMEGAME = 120
-const TIMEGAME = 120
+const TIMEGAME = 20
 let time = TIMEGAME
 let playing = false
 let timerId = null
@@ -278,8 +278,8 @@ function setup(){
     cardsCount = 0
     playerPoints = 0
     playerPointsDrawn.innerHTML = playerPoints
-    time = TIMEGAME
-    timeDrawn.innerHTML = time
+    timeDrawn.innerHTML = 0
+    playing = false
     createCards()
     
     discardCard = Math.floor(Math.random()*57)
@@ -293,15 +293,17 @@ function setup(){
 }
 setup()
 function timeUpdate(){
-    if(time>0){
-        time--
-        timeDrawn.innerHTML = time
-    }else if (playing){
-        clearInterval(timerId)
-        playing = false
-        playerCardDrawn.forEach(x=>x.removeEventListener('click',checkWord))
-        playerPointsModalGameOverDrawn.innerHTML = playerPoints;
-        modalGameOverDrawn.style.display = "block";
+    if(playing){
+        if(time>0){
+            time--
+            timeDrawn.innerHTML = time
+        }else{
+            clearInterval(timerId)
+            playing = false
+            playerCardDrawn.forEach(x=>x.removeEventListener('click',checkWord))
+            playerPointsModalGameOverDrawn.innerHTML = playerPoints;
+            modalGameOverDrawn.style.display = "block";
+        }
     }
 }
 
